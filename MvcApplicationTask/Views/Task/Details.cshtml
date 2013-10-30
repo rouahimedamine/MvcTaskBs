@@ -1,0 +1,57 @@
+﻿@model MvcApplicationTask.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Task</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomTask)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomTask)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contr)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contr)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateF)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateF)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Etat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Etat)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
