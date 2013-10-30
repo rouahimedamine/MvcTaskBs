@@ -6,47 +6,47 @@
     ViewBag.Title = "Sign in";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
 
-<section id="loginForm">
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <div>    
         <div class="page-header">
-            <h1>Form <small>Connect</small></h1>
+            <h1>Form <small>Sign in</small></h1>
         </div>
         <div class="row">
-            @Html.LabelFor(m => m.UserName, new { @class = "col-lg-2 control-label" })
-            @Html.TextBoxFor(m => m.UserName)
-            @Html.ValidationMessageFor(m => m.UserName)
-         </div>
-        <div class="row">
-            @Html.LabelFor(m => m.Password)
-            @Html.PasswordFor(m => m.Password)
-            @Html.ValidationMessageFor(m => m.Password)
+            <div class="form-group">
+                @*@Html.LabelFor(m => m.UserName, new {  })*@
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Login" })
+                </div>
+                <div class="col-md-7">
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+            </div>
         </div>
         <div class="row">
-            @Html.CheckBoxFor(m => m.RememberMe)
-            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            <div class="form-group">
+                <div class="col-md-5">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                </div>
+                <div class="col-md-7 alert-link">
+                    @Html.ValidationMessageFor(m => m.Password)
+                            </div>
+                @*@Html.LabelFor(m => m.Password)*@
+             </div>
         </div>
         <div class="row">
-            <input type="submit" value="Se connecter" />
+            <div class="col-md-3 push-2">
+                <a href="#">Forget Password</a>
+            </div>
+        </div>
+        <div class="container sub">
+            <button type="submit" class="btn btn-info">Sign in</button>
         </div>
         </div>
-    @*<p>
-        @Html.ActionLink("S'inscrire", "Register") si vous n’avez pas de compte.
-    </p>*@
 }
-</section>
 
-<!--
-<section class="social" id="socialLoginForm">
-    <h2>Utilisez un autre service pour vous connecter.</h2>
-   @*  @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })  *@
-</section>-->
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

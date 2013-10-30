@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccueilController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MsgController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +199,8 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ETaskContext.cs" />
+    <Compile Include="Models\MsgContext.cs" />
+    <Compile Include="Models\MsgModels.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -281,6 +284,11 @@
     <Content Include="Views\Task\Create.cshtml" />
     <Content Include="Views\Task\Edit.cshtml" />
     <Content Include="Views\Task\Delete.cshtml" />
+    <Content Include="Views\Msg\Index.cshtml" />
+    <Content Include="Views\Msg\Details.cshtml" />
+    <Content Include="Views\Msg\Create.cshtml" />
+    <Content Include="Views\Msg\Edit.cshtml" />
+    <Content Include="Views\Msg\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
