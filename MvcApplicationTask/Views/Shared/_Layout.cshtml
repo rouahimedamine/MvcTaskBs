@@ -27,13 +27,24 @@
                 <div class="collapse navbar-collapse navbar-ex-collapse">
                     <ul class="nav navbar-nav ">
                         <li>@Html.ActionLink("Task", "Index", "Task")</li>
-                        <li>@Html.ActionLink("Out / In", "Index", "Task")</li>
+                        <li>@Html.ActionLink("Out / In","outin", "Task")</li>
                         <li>@Html.ActionLink("Communication", "Index", "Msg")</li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("LogOut", "Index", "Task")</li>
-                                <li>@Html.ActionLink("Edit", "Index", "Task")</li>
+                                @*<li>@Html.ActionLink("LogOut", "Index", "Task")</li>*@
+                                <li>
+                                    <div class="btn btn-default">                                      
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <a href="javascript:document.getElementById('logoutForm').submit()">Se déconnecter</a>
+                                        }
+                                    </div>
+                                </li>
+                                <li>@*@Html.ActionLink("Edit", "Index", "Task")*@
+                                    @Html.ActionLink("Edit", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Gérer" })
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -50,7 +61,7 @@
 
         <div class="navbar navbar-default navbar-fixed-bottom">
             <div class="container">
-                <p>&copy; @DateTime.Now.Year Aidi-Inc</p>
+                <p>&copy; @DateTime.Now.Year &zwnj;<a href="http://aidi-inc.com/">Aidi-Inc</a></p>
                 </div>
         </div>
 

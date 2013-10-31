@@ -13,7 +13,8 @@
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p><a class="btn btn-primary btn-lg">Sign In</a></p>
+            @*<p><a class="btn btn-primary btn-lg">Sign In</a></p>*@
+            <p>@Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })</p>
         </div>
     </div>
 

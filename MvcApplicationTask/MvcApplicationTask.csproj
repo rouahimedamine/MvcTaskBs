@@ -289,6 +289,7 @@
     <Content Include="Views\Msg\Create.cshtml" />
     <Content Include="Views\Msg\Edit.cshtml" />
     <Content Include="Views\Msg\Delete.cshtml" />
+    <Content Include="Views\Task\outin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

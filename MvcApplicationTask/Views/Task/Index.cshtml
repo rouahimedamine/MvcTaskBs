@@ -1,63 +1,66 @@
-﻿@model IEnumerable<MvcApplicationTask.Models.Task>
+﻿
+@model IEnumerable<MvcApplicationTask.Models.Task>
 
 @{
     ViewBag.Title = "Index";
 }
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            @*<p>
+                @Html.ActionLink("Create New", "Create")
+            </p>*@
+                <table class="table table-hover">
+                    <tr class="alert alert-info">
+                        <th>
+                            Task
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Controller
+                        </th>
+                        <th>
+                            Start date
+                        </th>
+                        <th>
+                            Finish date
+                        </th>
+                        <th>
+                            State
+                        </th>
+                        <th></th>
+                    </tr>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table table-hover">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomTask)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Desc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.contr)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Etat)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomTask) | @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Desc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.contr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Etat)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NomTask) | @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Desc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.contr)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Etat)
+                            </td>
+                            @*<td>
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                              </td>*@
+                        </tr>
+                    }
+                    </table>
+                </div>
+        </div>
+</div>

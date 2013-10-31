@@ -3,30 +3,27 @@
     ViewBag.Title = "Gérer le compte";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+<div class="container">
+    <p class="message-success">@ViewBag.StatusMessage</p>
 
-<p class="message-success">@ViewBag.StatusMessage</p>
+    <p>You are connected <strong>@User.Identity.Name</strong>.</p>
 
-<p>Vous êtes connecté en tant que <strong>@User.Identity.Name</strong>.</p>
+    @if (ViewBag.HasLocalPassword)
+    {
+        @Html.Partial("_ChangePasswordPartial")
+    }
+    else
+    {
+        @Html.Partial("_SetPasswordPartial")
+    }
 
-@if (ViewBag.HasLocalPassword)
-{
-    @Html.Partial("_ChangePasswordPartial")
-}
-else
-{ 
-    @Html.Partial("_SetPasswordPartial")
-}
+    @*<section id="externalLogins">
+            @Html.Action("RemoveExternalLogins")
 
-<section id="externalLogins">
-    @Html.Action("RemoveExternalLogins")
-
-    <h3>Ajouter une connexion externe</h3>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
-
+            <h3>Ajouter une connexion externe</h3>
+            @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+        </section>*@
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

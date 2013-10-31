@@ -119,5 +119,10 @@ namespace MvcApplicationTask.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public ActionResult outin()
+        {
+            return View();
+        }
     }
 }

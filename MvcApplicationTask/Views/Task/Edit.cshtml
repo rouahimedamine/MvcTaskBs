@@ -3,76 +3,101 @@
 @{
     ViewBag.Title = "Edit";
 }
+<div class="container">
+    <h2>Edit Task</h2>
 
-<h2>Edit</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    <div class="container">
 
-    <fieldset>
-        <legend>Task</legend>
+    @Html.HiddenFor(model => model.Id)
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="label label-default">
+                Task
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.NomTask, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NomTask)
+            </div>
+        </div>
+    </div>
 
-        @Html.HiddenFor(model => model.Id)
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="label label-default">
+                Description
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Desc, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Desc)
+            </div>
+        </div>
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NomTask)
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="label label-default">
+                Controller
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.contr, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.contr)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NomTask)
-            @Html.ValidationMessageFor(model => model.NomTask)
-        </div>
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Desc)
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="label label-default">
+                Start date
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.DateD, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DateD)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Desc)
-            @Html.ValidationMessageFor(model => model.Desc)
-        </div>
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.contr)
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="label label-default">
+                Finish date
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.DateF, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DateF)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.contr)
-            @Html.ValidationMessageFor(model => model.contr)
-        </div>
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateD)
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="label label-default">
+                State
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Etat, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Etat)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateD)
-            @Html.ValidationMessageFor(model => model.DateD)
-        </div>
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateF)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateF)
-            @Html.ValidationMessageFor(model => model.DateF)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Etat)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Etat)
-            @Html.ValidationMessageFor(model => model.Etat)
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <p>
+        <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-ok-circle">  Save</span></button>
+    </p>
 </div>
+    }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            <div>
+                <div class="btn btn-default">
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+        </div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

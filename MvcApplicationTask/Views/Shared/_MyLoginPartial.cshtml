@@ -2,14 +2,14 @@
 {
 <div class="btn btn-info">
     Welcom, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Gérer" })!
-    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    @*@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
         @Html.AntiForgeryToken()
         <a href="javascript:document.getElementById('logoutForm').submit()">Se déconnecter</a>
-    }
+    }*@
 </div>
 }
 else
 {
-        @Html.ActionLink("Se connecter", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-default btn-xs" })
+        @Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-default btn-xs" })
 }
