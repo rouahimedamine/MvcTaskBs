@@ -16,5 +16,10 @@ namespace MvcApplicationTask.Controllers
             return View();
         }
 
+        public ActionResult Forget()
+        {
+            return View();
+        }
+
     }
 }

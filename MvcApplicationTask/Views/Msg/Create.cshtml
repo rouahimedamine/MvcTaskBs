@@ -12,17 +12,19 @@
         <fieldset>
             <legend>New Message</legend>
 
-            <span class="label label-info">@Html.LabelFor(model => model.Date)</span>
+            @*<span class="label label-info">@Html.LabelFor(model => model.Date)</span>
             <div class="form-group">
                 @Html.TextBoxFor(model => model.Date, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Date)
-            </div>
+            </div>*@
 
             <span class="label label-info">@Html.LabelFor(model => model.Emiteur)</span>
             <div class="form-group">
                 @Html.TextBoxFor(model => model.Emiteur, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Emiteur)
             </div>
+
+            
 
             <span class="label label-info">@Html.LabelFor(model => model.Contenu)</span>
             <div class="form-group">

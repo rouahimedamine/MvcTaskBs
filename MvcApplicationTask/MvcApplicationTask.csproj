@@ -290,6 +290,7 @@
     <Content Include="Views\Msg\Edit.cshtml" />
     <Content Include="Views\Msg\Delete.cshtml" />
     <Content Include="Views\Task\outin.cshtml" />
+    <Content Include="Views\Accueil\Forget.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

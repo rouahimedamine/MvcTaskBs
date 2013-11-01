@@ -51,6 +51,7 @@ namespace MvcApplicationTask.Controllers
         {
             if (ModelState.IsValid)
             {
+                msgmodels.Date = DateTime.Today.Date;
                 db.MsgModels.Add(msgmodels);
                 db.SaveChanges();
                 return RedirectToAction("Index");

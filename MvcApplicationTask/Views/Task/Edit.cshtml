@@ -88,15 +88,16 @@
 
     <p>
         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-ok-circle">  Save</span></button>
+        <span class="btn btn-default">
+            @Html.ActionLink("Back to List", "Index")
+        </span>
     </p>
 </div>
     }
 
-            <div>
-                <div class="btn btn-default">
-                    @Html.ActionLink("Back to List", "Index")
-                </div>
-            </div>
+
+
+
         </div>
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
